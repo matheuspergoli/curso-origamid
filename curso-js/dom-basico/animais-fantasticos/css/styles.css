@@ -177,7 +177,7 @@ body {
 .copy {
   grid-column: 3 / 5;
 
-  /* margin-bottom: 2rem; */
+  margin-bottom: 2rem;
   background-color: #FB5;
 }
 
