@@ -255,6 +255,11 @@ body {
   display: none;
 }
 
+.js-accordion dt {
+  cursor: pointer;
+  width: fit-content;
+}
+
 .js-accordion dt::after {
   content: '⮧';
   margin-left: 10px;
