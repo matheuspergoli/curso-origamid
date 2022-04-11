@@ -1,25 +1,25 @@
-const comida = 'Pizza'
-const agua = new String('Agua')
-const frase = 'A melhor linguagem é'
-const linguagem = 'JavaScript'
-const fraseFinal = frase.concat(linguagem, '!!')
-const fruta = 'Banana'
-const listaFrutas = 'Melancia, Banana, Laranja'
-const transacao1 = 'Depósito de cliente'
-const transacao2 = 'Depósito de fornecedor'
-const transacao3 = 'Taxa da camisas'
-const valor = ' R$ 99 '
-const listaPrecos = ['R$ 99', 'R$ 199', 'R$ 12000']
-let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias'
-listaItens = listaItens.replace(/[ ]+/g, ', ')
-const arrayLista = listaItens.split(', ')
-const htmlText = '<div>O melhor item</div><div>A melhor lista</div>'
-const htmlArray = htmlText.split('div')
-const novoHtml = htmlArray.join('section')
-const frutasArray = ['Banana', 'Melancia', 'Laranja']
-const sexo1 = 'Feminino'
-const sexo2 = 'feminino'
-const sexo3 = 'FEMININO'
+// const comida = 'Pizza'
+// const agua = new String('Agua')
+// const frase = 'A melhor linguagem é'
+// const linguagem = 'JavaScript'
+// const fraseFinal = frase.concat(linguagem, '!!')
+// const fruta = 'Banana'
+// const listaFrutas = 'Melancia, Banana, Laranja'
+// const transacao1 = 'Depósito de cliente'
+// const transacao2 = 'Depósito de fornecedor'
+// const transacao3 = 'Taxa da camisas'
+// const valor = ' R$ 99 '
+// const listaPrecos = ['R$ 99', 'R$ 199', 'R$ 12000']
+// let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias'
+// listaItens = listaItens.replace(/[ ]+/g, ', ')
+// const arrayLista = listaItens.split(', ')
+// const htmlText = '<div>O melhor item</div><div>A melhor lista</div>'
+// const htmlArray = htmlText.split('div')
+// const novoHtml = htmlArray.join('section')
+// const frutasArray = ['Banana', 'Melancia', 'Laranja']
+// const sexo1 = 'Feminino'
+// const sexo2 = 'feminino'
+// const sexo3 = 'FEMININO'
 
 // console.log(comida.length)
 // console.log(agua.length)
