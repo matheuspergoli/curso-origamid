@@ -1,15 +1,97 @@
-@import 'reset';
-@import 'colors';
-@import 'buttons';
+@mixin title-large {
+  line-height: 1;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: $font-primaria;
+}
 
-$preto: #999;
+@mixin border-box {
+  box-sizing: border-box;
+}
 
-div {
-  width: 100px;
-  height: 200px;
-  background-color: $preto;
+@mixin separador($color: blue, $largura: 100px) {
+  &::after {
+    content: '';
+    display: block;
+    width: $largura;
+    height: 4px;
+    background-color: $color;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content
+  }
+}
+
+$cor-primaria: blue;
+$font-primaria: monospace;
+$gutter: 60px;
+
+section {
+  @include border-box;
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.modal {
+  @include box-shadow(10px 10px 0px 0px rgba(0, 0, 0, 0.5), 
+                      15px 15px 0px 0px rgba(0, 0, 0, 0.5),
+                      20px 20px 0px 0px rgba(0, 0, 0, 0.5));
+  h1 {
+    color: $cor-primaria;
+    margin-bottom: $gutter;
+    font-family: $font-primaria;
+    @include mobile {
+      color: pink;
+    }
+    @include title-large;
+    @include separador(blue, 200px);
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.4;
+    max-width: 400px;
+    font-family: $font-primaria;
+  }
+  
   a {
-    color: pink;
-    background-color: blue;
+    display: block;
+    padding: 10px;
+    color: white;
+    max-width: 120px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-primaria;
+    background-color: $cor-primaria;
+  }
+}
+
+ul {
+  text-align: center;
+  li {
+    display: inline-block;
+    list-style: none;
+    a {
+      display: block;
+      padding: 20px;
+      color: white;
+      text-decoration: none;
+      background-color: blue;
+      &:hover {
+        background-color: pink;
+      }
+      &:active {
+        background-color: red;
+      }
+    }
   }
 }
