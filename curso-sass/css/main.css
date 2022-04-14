@@ -1,0 +1,29 @@
+*, *::after, *::before {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  color: blue;
+  background-color: gray;
+}
+
+a {
+  display: block;
+  width: 200px;
+  height: 40px;
+}
+
+div {
+  width: 100px;
+  height: 200px;
+  background-color: #999;
+}
+
+div a {
+  color: pink;
+  background-color: blue;
+}
+/*# sourceMappingURL=main.css.map */

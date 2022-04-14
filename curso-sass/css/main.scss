@@ -1,0 +1,15 @@
+@import 'reset';
+@import 'colors';
+@import 'buttons';
+
+$preto: #999;
+
+div {
+  width: 100px;
+  height: 200px;
+  background-color: $preto;
+  a {
+    color: pink;
+    background-color: blue;
+  }
+}
