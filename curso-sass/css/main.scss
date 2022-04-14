@@ -1,3 +1,66 @@
+@mixin device($device) {
+  @if ($device == mobile) {
+    @media (max-width: 375px) {
+      @content
+    }
+  } 
+
+  @else if ($device == tablet) {
+    @media (max-width: 768px) {
+      @content
+    }
+  }
+
+  @else if ($device == desktop) {
+    @media (max-width: 1024px) {
+      @content
+    }
+  }
+}
+
+div {
+  width: 100%;
+  @include device(tablet) {
+    width: 80%;
+  }
+
+  @include device(mobile) {
+    width: 60%;
+  }
+}
+
+@mixin type-1($size) {
+  font-family: monospace;
+
+  @if ($size == normal) {
+    font-size: 1em;
+    font-weight: normal;
+  } @else if ($size == large) {
+    font-size: 1.25em;
+  } @else if ($size == x-large) {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
+
+$tema: oceano;
+$primary-color: black;
+$secondary-color: gray;
+
+@if ($tema == oceano) {
+  $primary-color: blue;
+  $secondary-color: orange; 
+} @else if ($tema == deserto) {
+  $primary-color: yellow;
+  $secondary-color: purple;
+}
+
+p {
+  color: $primary-color;
+  background-color: $secondary-color;
+  @include type-1(x-large)
+}
+
 @mixin title-large {
   line-height: 1;
   font-size: 4em;
@@ -55,7 +118,6 @@ section {
   }
   
   p {
-    font-size: 1.2em;
     line-height: 1.4;
     max-width: 400px;
     font-family: $font-primaria;
