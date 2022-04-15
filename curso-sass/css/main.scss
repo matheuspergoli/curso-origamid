@@ -1,3 +1,21 @@
+@for $i from 1 through 12 {
+  $width: percentage(1 / $i);
+  .porcento-#{$i} {
+    width: $width;
+  }
+}
+
+$container: 768;
+$colunas: 12;
+$gutter: 20;
+
+@for $i from 1 through $colunas {
+  $width: $container / $colunas * $i - $gutter;
+  .grid-#{$i} {
+    width: $width + px;
+  }
+}
+
 @function grid($colunas, $total: 12) {
   @return ($colunas / $total) * 100%
 }
