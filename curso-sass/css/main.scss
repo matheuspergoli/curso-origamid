@@ -1,3 +1,11 @@
+@function grid($colunas, $total: 12) {
+  @return ($colunas / $total) * 100%
+}
+
+@function em($pixels, $contexto: 16) {
+  @return ($pixels / $contexto) * 1em
+}
+
 @mixin device($device) {
   @if ($device == mobile) {
     @media (max-width: 375px) {
@@ -19,6 +27,7 @@
 }
 
 div {
+  width: grid(4);
   width: 100%;
   @include device(tablet) {
     width: 80%;
@@ -142,6 +151,7 @@ ul {
   li {
     display: inline-block;
     list-style: none;
+    font-size: em(16, 36);
     a {
       display: block;
       padding: 20px;
@@ -149,10 +159,7 @@ ul {
       text-decoration: none;
       background-color: blue;
       &:hover {
-        background-color: pink;
-      }
-      &:active {
-        background-color: red;
+        background-color: transparentize(blue, 0.5);
       }
     }
   }
