@@ -53,10 +53,38 @@
 
 // Array.prototype.pop.call(frutas)
 
-// const li = document.querySelectorAll('li')
-// const arrayLi = Array.from(li)
+const li = document.querySelectorAll('li')
+const arrayLi = Array.from(li)
 
-// const filtro = arrayLi.filter.call(li, (item) => {
-//   return item.classList.contains('ativo')
-// })
-// console.log(filtro)
+const filtro = Array.prototype.filter.bind(li, (item) => {
+  return item.classList.contains('ativo')
+})
+
+console.log(filtro())
+const numeros = [5, 55, 10, 125, 255, 470, 990, 1999, 2020]
+
+const $ = document.querySelectorAll.bind(document)
+
+const carro = {
+  marca: 'Ford',
+  ano: 2018,
+
+  acelerar: function(aceleracao, tempo) {
+    return `${this.marca} acelerou ${aceleracao} em ${tempo}`
+  }
+}
+
+const honda = {
+  marca: 'Honda',
+}
+
+const acelerarHonda = carro.acelerar.bind(honda)
+
+function imc(altura, peso) {
+  const resultado = peso / (altura * altura)
+  return resultado.toFixed(2)
+}
+
+const imc180 = imc.bind(null, 1.80)
+
+console.log(imc180(100))
