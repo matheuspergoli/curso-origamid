@@ -51,10 +51,16 @@ const moto = {}
 
 Object.defineProperties(moto, {
   rodas: {
-    value: 2,
+    get() {
+      return this._rodas
+    },
+
+    set(valor) {
+      this._rodas = valor * 4 + ' Rodas no total'
+    }
   }
 })
 
 moto.rodas = 4
 delete moto.rodas
-console.log(moto)
+console.log(moto.rodas)
