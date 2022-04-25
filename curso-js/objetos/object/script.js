@@ -73,11 +73,11 @@ Object.getOwnPropertyDescriptor(window, 'innerHeight')
 // console.log(Object.getOwnPropertyNames(Array.prototype))
 // console.log(Object.getOwnPropertyNames(moto))
 
-const frutas = ['Banana']
+// const frutas = ['Banana']
 // console.log(Object.getPrototypeOf(frutas))
 
-const frutas1 = ['Banana', 'Pêra']
-const frutas2 = ['Banana', 'Pêra']
+// const frutas1 = ['Banana', 'Pêra']
+// const frutas2 = ['Banana', 'Pêra']
 
 // console.log(Object.is(frutas1, frutas2))
 
@@ -87,5 +87,12 @@ const carro = {
 }
 Object.freeze(carro)
 carro.marca = 'Honda'
-console.log(carro)
-console.log(Object.isFrozen(carro))
+// console.log(carro)
+// console.log(Object.isFrozen(carro))
+
+const frutas = ['Banana', 'Uva']
+const frase = 'Isso é uma String'
+// console.log(frase.constructor)
+// console.log(frutas.constructor)
+
+console.log(Object.prototype.toString.call(carro))
