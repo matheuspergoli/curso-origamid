@@ -59,3 +59,19 @@
 // carregouTudo.then(resolucao => {
 //   console.log(resolucao)
 // })
+
+function imparOuPar(numero) {
+  return new Promise((resolve, reject) => {
+    if (numero % 2 === 0) {
+      resolve('O número é par')
+    } else {
+      resolve('O número é ímpar')
+    }
+  })
+}
+imparOuPar(5)
+.then(resolucao => resolucao.toUpperCase())
+.then(resolucao => resolucao.split(' '))
+.then(resolucao => resolucao.pop())
+.then(resolucao => resolucao.toLowerCase())
+.then(resolucao => console.log(resolucao))
