@@ -1,7 +1,12 @@
-const doc = fetch('./doc.txt')
+const sobre = fetch('./sobre.html')
 
-doc.then(resolucao => {
-  resolucao.text().then(body => {
-    console.log(body)
-  })
+const div = document.createElement('div')
+
+sobre
+.then(resolucao => resolucao.text())
+
+.then(body => {
+  div.innerHTML = body
+  const titulo = div.querySelector('p')
+  document.querySelector('h1').innerText = titulo.innerText 
 })
