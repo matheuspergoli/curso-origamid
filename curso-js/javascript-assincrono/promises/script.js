@@ -1,77 +1,74 @@
-// const promesa = new Promise((resolve, reject) => {
-//   let condicao = true
-//   if (condicao) {
-//     setTimeout(() => {
-//       resolve({ nome: 'Matheus', sobrenome: 'Pergoli', idade: 22 })
-//     }, 1000)
-//   } else {
-//     reject(Error('Um erro occoreu na promise'))
-//   }
-// })
-// const retorno = promesa
-// .then(resolucao => {
-//   resolucao.profissao = 'Programador'
-//   return resolucao
-// })
-// .then(resolucao => {
-//   console.log(resolucao)
-// })
-// .catch(rejeitada => {
-//   console.log(rejeitada)
-// })
-// .finally(() => {
-//   console.log('Acabou')
-// })
+const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ nome: 'Matheus', sobrenome: 'Pergoli' })
+  }, 2000)
+})
+
+promesa
+.then(response => {
+  response.idade = 22
+  return response
+})
+
+.then(response => console.log(response))
+
+.catch(rejected => console.log('Promessa rejeitada'))
+
+.finally(() => console.log('A promessa foi finalizada'))
 
 
-// const dadosDoUsuario = new Promise((resolve, reject) => {
-//   let condicao = true
-//   if (condicao) {
-//     resolve({ nome: 'Matheus', sobrenome: 'Pergoli', idade: 22 })
-//   } else {
-//     reject(Error('Ocorreu algum erro com o úsuario'))
-//   }
-// })
-
-// dadosDoUsuario.then(({ nome, sobrenome, idade }) => {
-//   const str = `Meu nome é ${nome} ${sobrenome} e tenho ${idade} anos`
-//   return str
-// }).then((resolucao) => {
-//   const str = resolucao.toUpperCase()
-//   return str
-// })
-// console.log(dadosDoUsuario)
 
 
-// const login = new Promise(resolve => {
-//   setTimeout(() => {
-//     resolve('Usuário logado')
-//   }, 1000)
-// })
 
-// const dados = new Promise(resolve => {
-//   setTimeout(() => {
-//     resolve('Dados carregados')
-//   }, 1500)
-// })
+const login = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Login Efetuado')
+  }, 1000)
+})
 
-// const carregouTudo = Promise.all([login, dados])
-// carregouTudo.then(resolucao => {
-//   console.log(resolucao)
-// })
+const dados = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Dados Carregados')
+  }, 2000)
+})
 
-function imparOuPar(numero) {
-  return new Promise((resolve, reject) => {
-    if (numero % 2 === 0) {
-      resolve('O número é par')
-    } else {
-      resolve('O número é ímpar')
-    }
+const tudoCarregado = Promise.all([login, dados])
+
+tudoCarregado.then(response => {
+  console.log(response)
+})
+
+
+
+
+
+const btn1 = document.querySelector('.btn-1')
+const btn2 = document.querySelector('.btn-2')
+
+const addEventOnBtn1 = new Promise((resolve, reject) => {
+  if (btn1) {
+    resolve(btn1)
+  } else {
+    reject('Botão não encontrado')
+  }
+})
+
+const addEventOnBtn2 =  new Promise((resolve, reject) => {
+  if (btn2) {
+    resolve(btn2)
+  } else {
+    reject('Botão não encontrado')
+  }
+})
+
+const addEventOnBtns = Promise.all([addEventOnBtn1, addEventOnBtn2])
+
+addEventOnBtns.then(btns => {
+  btns.forEach(btn => {
+    btn.addEventListener('click', handleClickBtn)
   })
+})
+
+function handleClickBtn(event) {
+  event.target.innerText = 'Clicado!'
 }
-imparOuPar(5)
-.then(resolucao => resolucao.toUpperCase())
-.then(resolucao => resolucao.split(' '))
-.then(resolucao => resolucao.pop())
-.then(resolucao => resolucao.toLowerCase())
-.then(resolucao => console.log(resolucao))
