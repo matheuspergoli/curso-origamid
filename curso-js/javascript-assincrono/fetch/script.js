@@ -1,15 +1,4 @@
-const sobre = fetch('./sobre.html')
-const div = document.createElement('div')
-
-sobre
-.then(response => response.text())
-.then(body => {
-  div.innerHTML = body
-  const titulo = div.querySelector('h1')
-  const texto = div.querySelector('p')
-  document.body.appendChild(titulo)
-  document.body.appendChild(texto)
-})
+const cep = 'https://viacep.com.br/ws/08420030/json/'
 
 
 
@@ -25,6 +14,41 @@ sobre
 
 
 
+
+
+
+
+// fetch(cep)
+// .then(response => {
+//   const responseText = response.clone()
+//   const responseJson = response.clone()
+
+//   responseText.text().then(text => console.log(text))
+//   responseJson.json().then(json => console.log(json))
+// })
+
+// const imagem = './desktop.png'
+
+// fetch(imagem)
+// .then(response => response.blob())
+// .then(body => {
+//   const blobUrl = URL.createObjectURL(body)
+//   const imagemDom = document.querySelector('img')
+//   imagemDom.src = blobUrl
+// })
+
+// const sobre = fetch('./sobre.html')
+// const div = document.createElement('div')
+
+// sobre
+// .then(response => response.text())
+// .then(body => {
+//   div.innerHTML = body
+//   const titulo = div.querySelector('h1')
+//   const texto = div.querySelector('p')
+//   document.body.appendChild(titulo)
+//   document.body.appendChild(texto)
+// })
 
 // const btn = document.querySelector('button')
 
