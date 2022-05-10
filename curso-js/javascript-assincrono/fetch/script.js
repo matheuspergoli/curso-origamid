@@ -1,22 +1,23 @@
-const cep = 'https://viacep.com.br/ws/08420030/json/'
+const url = 'https://viacep.com.br/ws/08420030/json/'
 
+fetch(url)
+.then(response => {
+  console.log(response.url)
+})
 
+// const url = './docs.txt'
 
+// fetch(url)
+// .then(response => {
+//   if (response.status === 404) {
+//     console.log('Página não encontrada')
+//   }
+// })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// fetch(url)
+// .then(response => {
+//   response.headers.forEach(console.log)
+// })
 
 // fetch(cep)
 // .then(response => {
