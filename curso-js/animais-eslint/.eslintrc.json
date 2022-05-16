@@ -13,6 +13,7 @@
     "rules": {
         "semi": "off",
         "no-param-reassign": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "no-console": "off"
     }
 }
