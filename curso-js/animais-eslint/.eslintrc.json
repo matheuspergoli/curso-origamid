@@ -11,5 +11,8 @@
         "sourceType": "module"
     },
     "rules": {
+        "semi": "off",
+        "no-param-reassign": "off",
+        "import/extensions": "off"
     }
 }
