@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: './js/script.js',
@@ -14,11 +14,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            preset: ['@babel/preset0env'],
+            presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
       },
     ],
   },
-}
+};
