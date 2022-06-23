@@ -34,13 +34,13 @@ export default class Slide {
   }
 
   onMove(event) {
-    const pointerPosition = (event.type === 'mousemove' ? event.clientX : event.changedTouches[0].clientX)
+    const pointerPosition = (event.type === 'mousemove') ? event.clientX : event.changedTouches[0].clientX
     const finalPosition = this.updatePosition(pointerPosition)
     this.moveSlide(finalPosition)
   }
 
   onEnd(event) {
-    const moveType = (event.type === 'mouseup' ? 'mousemove' : 'touchmove')
+    const moveType = (event.type === 'mouseup') ? 'mousemove' : 'touchmove'
     this.wrapper.removeEventListener(moveType, this.onMove)
     this.dist.finalPosition = this.dist.movePosition
     this.transition(true)
@@ -77,7 +77,7 @@ export default class Slide {
   }
 
   slidesConfig() {
-    this.slideArray = [...this.slide.children].map(element => {
+    this.slideArray = [...this.slide.children].map((element) => {
       const position = this.slidePosition(element)
       return { position, element }
     })
