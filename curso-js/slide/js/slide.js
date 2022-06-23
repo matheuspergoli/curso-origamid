@@ -1,7 +1,7 @@
 export default class Slide {
   constructor(slide, wrapper) {
     this.slide = document.querySelector(slide)
-    this.wrapper = document.querySelector(wrapper)
+    this.wrapper = document.querySelector(wrapper);
     this.dist = { finalPosition: 0, startX: 0, movement: 0 }
   }
 
@@ -20,16 +20,16 @@ export default class Slide {
   }
 
   onStart(event) {
-    let moveType
+    let movetype
     if (event.type === 'mousedown') {
       event.preventDefault()
       this.dist.startX = event.clientX
-      moveType = 'mousemove'
+      movetype = 'mousemove'
     } else {
       this.dist.startX = event.changedTouches[0].clientX
-      moveType = 'touchmove'
+      movetype = 'touchmove'
     }
-    this.wrapper.addEventListener(moveType, this.onMove)
+    this.wrapper.addEventListener(movetype, this.onMove)
     this.transition(false)
   }
 
@@ -40,8 +40,8 @@ export default class Slide {
   }
 
   onEnd(event) {
-    const moveType = (event.type === 'mouseup') ? 'mousemove' : 'touchmove'
-    this.wrapper.removeEventListener(moveType, this.onMove)
+    const movetype = (event.type === 'mouseup') ? 'mousemove' : 'touchmove'
+    this.wrapper.removeEventListener(movetype, this.onMove)
     this.dist.finalPosition = this.dist.movePosition
     this.transition(true)
     this.changeSlideOnEnd()
@@ -58,8 +58,8 @@ export default class Slide {
   }
 
   addSlideEvents() {
-    this.wrapper.addEventListener('touchstart', this.onStart)
     this.wrapper.addEventListener('mousedown', this.onStart)
+    this.wrapper.addEventListener('touchstart', this.onStart)
     this.wrapper.addEventListener('mouseup', this.onEnd)
     this.wrapper.addEventListener('touchend', this.onEnd)
   }
@@ -71,6 +71,7 @@ export default class Slide {
   }
 
   // Slides config
+
   slidePosition(slide) {
     const margin = (this.wrapper.offsetWidth - slide.offsetWidth) / 2
     return -(slide.offsetLeft - margin)
@@ -88,7 +89,7 @@ export default class Slide {
     this.index = {
       prev: index ? index - 1 : undefined,
       active: index,
-      next: index === last ? undefined : index + 1
+      next: index === last ? undefined : index + 1,
     }
   }
 
@@ -100,15 +101,11 @@ export default class Slide {
   }
 
   activePrevSlide() {
-    if (this.index.prev !== undefined) {
-      this.changeSlide(this.index.prev)
-    }
+    if (this.index.prev !== undefined) this.changeSlide(this.index.prev)
   }
 
   activeNextSlide() {
-    if (this.index.next !== undefined) {
-      this.changeSlide(this.index.next)
-    }
+    if (this.index.next !== undefined) this.changeSlide(this.index.next)
   }
 
   init() {
