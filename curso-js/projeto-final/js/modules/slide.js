@@ -100,7 +100,7 @@ export class Slide {
   }
 
   changeActiveClass() {
-    this.slideArray.forEach(item => item.element.classList.remove(this.activeClass))
+    this.slideArray.forEach((item) => item.element.classList.remove(this.activeClass))
     this.slideArray[this.index.active].element.classList.add(this.activeClass)
   }
 
@@ -144,7 +144,6 @@ export class Slide {
 }
 
 export default class SlideNav extends Slide {
-
   constructor(slide, wrapper) {
     super(slide, wrapper)
     this.bindControlEvents()
@@ -164,7 +163,7 @@ export default class SlideNav extends Slide {
   createControl() {
     const control = document.createElement('ul')
     control.dataset.control = 'slide'
-    
+
     this.slideArray.forEach((item, index) => {
       control.innerHTML += `<li><a href="#slide${index + 1}">${index}</a></li>`
     })
@@ -182,13 +181,13 @@ export default class SlideNav extends Slide {
   }
 
   activeControlItem() {
-    this.controlArray.forEach(item => item.classList.remove(this.activeClass))
+    this.controlArray.forEach((item) => item.classList.remove(this.activeClass))
     this.controlArray[this.index.active].classList.add(this.activeClass)
   }
 
   addControl(customControl) {
     this.control = document.querySelector(customControl) || this.createControl()
-    this.controlArray = [ ...this.control.children ]
+    this.controlArray = [...this.control.children]
     this.activeControlItem()
     this.controlArray.forEach(this.eventControl)
   }
