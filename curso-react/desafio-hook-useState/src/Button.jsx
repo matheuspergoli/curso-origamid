@@ -2,12 +2,14 @@ import React from "react"
 import Produto from "./Produto"
 
 function Button({innerText, fetchURL}) {
-  const [dados, setDados] = React.useState(null)
+  const [dadosJSON, setDados] = React.useState(null)
+  const [carregando, setCarregando] = React.useState(null)
 
   async function fetchProdutos() {
+    setCarregando(true)
     const json = await (await fetch(fetchURL + innerText)).json()
-    console.log(json)
     setDados(json)
+    setCarregando(false)
   }
 
   return (
@@ -15,10 +17,8 @@ function Button({innerText, fetchURL}) {
       <button onClick={fetchProdutos} className="text-2xl m-5 p-2 rounded-md bg-blue-400">
         {innerText}
       </button>
-      {dados && <Produto 
-      nomeProduto={dados.nome} 
-      precoProduto={dados.preco} 
-      imgProduto={dados.fotos.src}  />}
+      {carregando && <p>Carregando...</p>}
+      {!carregando && dadosJSON && <Produto dados={dadosJSON} />}
     </section>
   )
 }
