@@ -1,5 +1,5 @@
 import React from "react"
-import LogarDados from "./components/LogarDados"
+import MostrarDados from "./components/MostrarDados"
 import LimparDados from "./components/LimparDados"
 import BuscarDados from "./components/BuscarDados"
 import { GlobalContextProvider } from "./contexts/GlobalContext"
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <GlobalContextProvider>
-      <LogarDados />
+      <MostrarDados />
       <LimparDados />
       <BuscarDados />
     </GlobalContextProvider>

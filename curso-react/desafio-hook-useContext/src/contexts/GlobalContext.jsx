@@ -6,10 +6,10 @@ export function GlobalContextProvider({children}) {
   const [dados, setDados] = React.useState(null)
 
   React.useEffect(() => {
-    fetchDados()
+    buscarDados()
   }, [])
   
-  async function fetchDados() {
+  async function buscarDados() {
     const url = 'https://ranekapi.origamid.dev/json/api/produto/'
     const json = await (await fetch(url)).json()
     setDados(json)
@@ -24,7 +24,7 @@ export function GlobalContextProvider({children}) {
   }
 
   return (
-    <GlobalContext.Provider value={{fetchDados, limparDados, mostrarDados }}>
+    <GlobalContext.Provider value={{dados, mostrarDados, limparDados, buscarDados }}>
       {children}
     </GlobalContext.Provider>
   )

@@ -1,7 +1,7 @@
 import React from "react"
 import { GlobalContext } from "../contexts/GlobalContext"
 
-function LogarDados() {
+function MostrarDados() {
   const {mostrarDados} = React.useContext(GlobalContext)
 
   return (
@@ -9,4 +9,4 @@ function LogarDados() {
   )
 }
 
-export default LogarDados
+export default MostrarDados
