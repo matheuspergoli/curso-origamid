@@ -20,6 +20,10 @@ export function GlobalContextProvider({children}) {
   }
 
   function mostrarDados() {
+    if (dados === null) {
+      alert('Não há dados no momento, opte por Buscar dados primeiro.')
+      return
+    }
     console.log(dados)
   }
 
