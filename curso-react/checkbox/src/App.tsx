@@ -3,7 +3,7 @@ import React from "react"
 function App() {
   const [cores, setCores] = React.useState(['azul'])
 
-  function handleChange({target}) {
+  function handleChange({target}: any) {
     if (target.checked) {
       setCores([ ...cores, target.value ])
     } else {
@@ -11,7 +11,7 @@ function App() {
     }
   }
 
-  function checkColor(cor) {
+  function checkColor(cor: string) {
     return cores.includes(cor)
   }
 
