@@ -1,14 +1,14 @@
-import { FC, FocusEventHandler } from "react"
+import { FC, FocusEventHandler, ChangeEventHandler } from "react"
 
 interface PropsInput {
   label: string,
   id: string,
   value: string,
-  setValue: Function,
-  onBlur: FocusEventHandler
+  onBlur: FocusEventHandler,
+  onChange: ChangeEventHandler
 }
 
-const Input:FC<PropsInput> = ({label, id, value, setValue, onBlur}) => {
+const Input:FC<PropsInput> = ({label, id, value, onChange, onBlur}) => {
 
   return (
     <>
@@ -19,7 +19,7 @@ const Input:FC<PropsInput> = ({label, id, value, setValue, onBlur}) => {
       id={id} 
       onBlur={onBlur}
       value={value} 
-      onChange={({target}) => setValue(target.value)} />
+      onChange={onChange} />
     </>
   )
 }

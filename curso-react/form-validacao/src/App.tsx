@@ -3,14 +3,13 @@ import Input from "./Form/Input"
 
 function App() {
   const [cep, setCep] = React.useState('')
-  const [email, setEmail] = React.useState('')
   const [erro, setErro] = React.useState<null | string>(null)
 
   function validateCep(value: string) {
     if (value.length === 0) {
       setErro('Preencha um valor')
       return false
-    } else if (/^\d{5}-?\d{3}$/.test(value)) {
+    } else if (!/^\d{5}-?\d{3}$/.test(value)) {
       setErro('Preencha um CEP válido')
       return false
     } else {
@@ -20,13 +19,29 @@ function App() {
   }
 
   function handleBlur({target}: any) {
-    const regex = /^\d{5}-?\d{3}$/
-    const validacao = regex.test(target.value)
+    validateCep(target.value)
+  }
+
+  function handleChange({target}: any) {
+    if (erro) {
+      validateCep(target.value)
+    }
+    setCep(target.value)
+  }
+
+  function handleSubmit(event: any) {
+    event.preventDefault()
+    if (validateCep(cep)) {
+      console.log('Enviou')
+    } else {
+      console.log('Não enviou')
+    }
   }
 
   return (
-    <form>
-      <Input id="cep" label="CEP" value={cep} setValue={setCep} onBlur={handleBlur} />
+    <form onSubmit={handleSubmit}>
+      <Input id="cep" label="CEP" value={cep} onChange={handleChange} onBlur={handleBlur} />
+      {erro && <p>{erro}</p>}
       <button>Enviar</button>
     </form>
   )
