@@ -1,0 +1,16 @@
+.titulo {
+  color: #43c;
+}
+
+.preco {
+  font-weight: bold;
+}
+
+.comprar {
+  font-size: 30px;
+}
+
+.comprar:hover {
+  color: white;
+  background-color: black;
+}
