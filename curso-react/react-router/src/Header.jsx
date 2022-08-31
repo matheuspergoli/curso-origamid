@@ -1,6 +1,13 @@
-import { NavLink } from "react-router-dom"
+import React from "react"
+import { NavLink, useLocation } from "react-router-dom"
 
 function Header() {
+  const location = useLocation()
+
+  React.useEffect(() => {
+    console.log('Mudou a rota')
+  }, [location])
+
   const style = {
     color: 'tomato'
   }
