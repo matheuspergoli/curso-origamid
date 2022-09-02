@@ -17,6 +17,10 @@ const Container = styled.header`
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.25);
 
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.45);
+    }
+
     &.active {
       background-color: rgba(0, 0, 0, 0.45);
     }

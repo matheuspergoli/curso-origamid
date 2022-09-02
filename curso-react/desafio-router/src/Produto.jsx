@@ -1,6 +1,7 @@
 import React from "react"
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
+import Head from "./Head"
 
 const Container = styled.section`
   display: flex;
@@ -68,6 +69,7 @@ function Produto() {
     <>
       {produto && (
         <Container>
+          <Head title={`React | ${id}`} />
           <ContainerImagem>
             <Imagem src={produto.fotos[0].src} />
           </ContainerImagem>
