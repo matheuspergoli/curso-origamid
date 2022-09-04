@@ -1,0 +1,48 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: 'Spectral', Georgia;
+}
+
+body {
+  margin: 0px;
+  color: #333;
+  font-family: var(--type-first);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  color: #333;
+  font-size: 1rem;
+  font-family: var(--type-first);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 50rem;
+}
