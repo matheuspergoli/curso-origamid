@@ -10,6 +10,7 @@
 body {
   margin: 0px;
   color: #333;
+  padding-top: 4rem;
   font-family: var(--type-first);
 }
 
@@ -39,6 +40,10 @@ input {
   color: #333;
   font-size: 1rem;
   font-family: var(--type-first);
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
