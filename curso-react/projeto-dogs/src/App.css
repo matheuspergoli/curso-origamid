@@ -43,6 +43,7 @@ input {
 }
 
 a {
+  color: #333;
   text-decoration: none;
 }
 
@@ -50,4 +51,39 @@ a {
   margin: 0 auto;
   padding: 0 1rem;
   max-width: 50rem;
+}
+
+.title {
+  position: relative;
+  margin: 1rem 0;
+  line-height: 1;
+  font-size: 3rem;
+  font-family: var(--type-second);
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: 5px;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: .2rem;
+  background-color: #fb1;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 300ms forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
