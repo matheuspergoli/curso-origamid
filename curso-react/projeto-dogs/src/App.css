@@ -53,6 +53,10 @@ a {
   max-width: 50rem;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .title {
   position: relative;
   margin: 1rem 0;

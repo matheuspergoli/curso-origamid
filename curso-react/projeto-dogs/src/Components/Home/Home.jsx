@@ -1,10 +1,11 @@
 import styles from "./Home.module.css"
+import Feed from '../Feed/Feed'
 
 function Home() {
   return (
-    <div className={styles.home}>
-      Home
-    </div>
+    <section className='container mainContainer'>
+      <Feed />
+    </section>
   )
 }
 
